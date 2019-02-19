@@ -220,6 +220,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReturnImageController.cs" />
     <Compile Include="Controllers\UploadImageController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -233,6 +234,30 @@
     <Compile Include="Migrations\201902150913573_PopulateEmployeeModel.cs" />
     <Compile Include="Migrations\201902150913573_PopulateEmployeeModel.Designer.cs">
       <DependentUpon>201902150913573_PopulateEmployeeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902181709342_abc.cs" />
+    <Compile Include="Migrations\201902181709342_abc.Designer.cs">
+      <DependentUpon>201902181709342_abc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902181712412_def.cs" />
+    <Compile Include="Migrations\201902181712412_def.Designer.cs">
+      <DependentUpon>201902181712412_def.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902181722473_h.cs" />
+    <Compile Include="Migrations\201902181722473_h.Designer.cs">
+      <DependentUpon>201902181722473_h.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902190523402_addcolumnreportsto.cs" />
+    <Compile Include="Migrations\201902190523402_addcolumnreportsto.Designer.cs">
+      <DependentUpon>201902190523402_addcolumnreportsto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902190532044_insertvaluesinreportstocolumn.cs" />
+    <Compile Include="Migrations\201902190532044_insertvaluesinreportstocolumn.Designer.cs">
+      <DependentUpon>201902190532044_insertvaluesinreportstocolumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902190635266_enterlevelforall.cs" />
+    <Compile Include="Migrations\201902190635266_enterlevelforall.Designer.cs">
+      <DependentUpon>201902190635266_enterlevelforall.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -340,6 +365,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902150913573_PopulateEmployeeModel.resx">
       <DependentUpon>201902150913573_PopulateEmployeeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902181709342_abc.resx">
+      <DependentUpon>201902181709342_abc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902181712412_def.resx">
+      <DependentUpon>201902181712412_def.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902181722473_h.resx">
+      <DependentUpon>201902181722473_h.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902190523402_addcolumnreportsto.resx">
+      <DependentUpon>201902190523402_addcolumnreportsto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902190532044_insertvaluesinreportstocolumn.resx">
+      <DependentUpon>201902190532044_insertvaluesinreportstocolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902190635266_enterlevelforall.resx">
+      <DependentUpon>201902190635266_enterlevelforall.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

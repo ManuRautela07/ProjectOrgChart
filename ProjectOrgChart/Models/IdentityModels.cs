@@ -23,6 +23,7 @@ namespace ProjectOrgChart.Models
     {
 
        public DbSet<EmployeeModel> EmployeeModel { get; set; }
+   
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -32,5 +33,7 @@ namespace ProjectOrgChart.Models
         {
             return new ApplicationDbContext();
         }
+
+      //  public System.Data.Entity.DbSet<ProjectOrgChart.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace ProjectOrgChart.Models
         public string Email { get; set;}
         public string Contact { get; set; }
         public string ImagePath { get; set; }
-       
+        public int ReportsTo { get; set; }
+     
+
     }
 }

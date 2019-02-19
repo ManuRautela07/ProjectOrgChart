@@ -8,12 +8,19 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using System.Web.Http.Cors;
 using ProjectOrgChart.Models;
+using System.Web;
+using System.IO;
 
 namespace ProjectOrgChart.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    
     public class DetailsController : ApiController
     {
+
+        //Get controller fetches the details of all employees
+
+        [Route("api/employeedetails")]
         public IEnumerable<EmployeeModel> Get()
         {
     
@@ -23,6 +30,8 @@ namespace ProjectOrgChart.Controllers
             }
         }
 
+
+        //Get controller with a parameter id returns the details of employee with specific id
         public HttpResponseMessage Get(int id)
         {
 
@@ -41,7 +50,8 @@ namespace ProjectOrgChart.Controllers
             }
         }
 
-        public HttpResponseMessage Post([FromBody]EmployeeModel employee)
+        //Post method adds a new employee to our table
+       public HttpResponseMessage Post([FromBody]EmployeeModel employee)
         {
             try
             {
@@ -50,20 +60,62 @@ namespace ProjectOrgChart.Controllers
                     entities.EmployeeModel.Add(employee);
                     entities.SaveChanges();
 
+
+
+                  /*  string imageName = null;
+                    var httpRequest = HttpContext.Current.Request;
+                    //upload an image
+                    var postedFile = httpRequest.Files["Image"];
+
+
+                    imageName = new String(Path.GetFileNameWithoutExtension(postedFile.FileName).Take(10).ToArray()).Replace(" ", "-");
+                    imageName = imageName + DateTime.Now.ToString("yymmff") + Path.GetExtension(postedFile.FileName);
+                    var filepath = HttpContext.Current.Server.MapPath("~/Image/" + imageName);
+                    postedFile.SaveAs(filepath);
+
+
+
+                System.Diagnostics.Debug.Write("ID is before req-----------------" );
+
+                using (var db = new ApplicationDbContext())
+                    {
+                    EmployeeModel entity = new EmployeeModel()
+                    {
+
+                        Name = employee.Name,
+                        Email = employee.Email,
+                        Contact=employee.Contact,
+                            ImagePath = imageName
+                        };
+
+                        db.EmployeeModel.Add(entity);
+                        db.SaveChanges();
+
+
+                */
+    
+
+
+                    }
+
+
+
+
                     var message = Request.CreateResponse(HttpStatusCode.Created, employee);
                     message.Headers.Location = new Uri(Request.RequestUri + "/" + employee.Id.ToString());
                     return message;
 
-                }
+                
             }
             catch (Exception ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
+        
 
 
-
+        //deletes method deletes the employee with specific id
         public HttpResponseMessage delete(int id)
         {
 
@@ -102,7 +154,7 @@ namespace ProjectOrgChart.Controllers
 
         }
 
-        public HttpResponseMessage put(int id, [FromBody]EmployeeModel employee)
+        public HttpResponseMessage Put(int id, [FromBody]EmployeeModel employee)
         {
 
             try
